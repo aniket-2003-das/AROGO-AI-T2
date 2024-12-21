@@ -10,9 +10,9 @@ const upload = multer({ dest: 'uploads/' });
 
 // Update CORS to accept requests from your Vercel deployment
 app.use(cors({
-  // origin: process.env.FRONTEND_URL || 'http://localhost:3000'  
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000'  
   // origin: process.env.FRONTEND_URL || 'https://imagedescription.vercel.app/'  
-  origin: 'https://imagedescription.vercel.app/'  
+  // origin: 'https://imagedescription.vercel.app/'  
 }));
 
 app.post('/caption', upload.single('image'), async (req, res) => {
